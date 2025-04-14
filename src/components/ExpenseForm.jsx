@@ -12,6 +12,13 @@ const ExpenseForm = () => {
   const handleSubmit = (event)=>{
     event.preventDefault()
     alert('Your Expense has been updated')
+    console.log({
+      expenseName,
+      expenseDescription,
+      expenseCategry,
+      expenseAmount,
+      dateOfExpense,
+    });
   };
   return (
     <div>
@@ -21,6 +28,7 @@ const ExpenseForm = () => {
          </div>
         <form id="expenses-form"
 		    onSubmit={handleSubmit}
+        
         >
 				<input
                  type='text' 
@@ -62,9 +70,11 @@ const ExpenseForm = () => {
                 />
                 <br />
                 <button>Submit Expense</button>
+                
 
 				
 			</form>
+      
     </div>
     
   )
