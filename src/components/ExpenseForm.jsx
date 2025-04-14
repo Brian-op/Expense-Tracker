@@ -25,35 +25,40 @@ const ExpenseForm = () => {
 				<input
                  type='text' 
                  placeholder="Enter Expense Name..." 
-                 
+                 value={expenseName}
+                 onChange={(event)=>setExpenseName(event.target.value)}
                  required />
                 <br />
 
                 <input
                  type='text'
                  placeholder="Enter Expense Description..." 
-                 
+                 value={expenseDescription}
+                 onChange={(event)=>setExpenseDescription(event.target.value)}
                  required />
                 <br />
 
                 <input
                 //  id="task-input" 
                 type='text'
-                
+                value={expenseCategry}
+                onChange={(event)=>setExpenseCategory(event.target.value)}
                  placeholder="Enter Expence Category..." required />
                 <br />
 
                 <input 
                 placeholder="Enter Amount..." 
                 type='number'
-                
+                value={expenseAmount}
+                onChange={(event)=>setExpenseAmount(event.target.value)} 
                 min={1} 
                 required />
                 <br />
 
                 <input 
                 type="date" 
-                 
+                 value={dateOfExpense}
+                 onChange={(event)=>setDateOfExpense(event.target.value)}
                 />
                 <br />
                 <button>Submit Expense</button>
