@@ -31,6 +31,7 @@ const App = () => {
       <Header />
       <ExpenseForm onAddExpense={addExpense} />
       <ExpensesTable expenses={expenses} />
+
     </div>
   );
 };
