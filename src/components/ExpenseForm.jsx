@@ -1,26 +1,37 @@
 import React, {useState } from 'react'
 
-const ExpenseForm = () => {
+const ExpenseForm = ({onAddExpense}) => {
   //declare form values
   const[expenseName, setExpenseName]= useState('')
   const[expenseDescription, setExpenseDescription]= useState('')
-  const[expenseCategry, setExpenseCategory]= useState('')
+  const[expenseCategory, setExpenseCategory]= useState('')
   const[expenseAmount, setExpenseAmount]= useState('')
   const[dateOfExpense, setDateOfExpense]= useState('')
   
   //Submit
   const handleSubmit = (event)=>{
     event.preventDefault()
+
+    const newExpense = {
+      name: expenseName,
+      description: expenseDescription,
+      category: expenseCategory,
+      amount: parseFloat(expenseAmount),
+      date: dateOfExpense,
+    }
+    onAddExpense(newExpense);
     
     alert('Your Expense has been updated')
-    console.log({
-      expenseName,
-      expenseDescription,
-      expenseCategry,
-      expenseAmount,
-      dateOfExpense,
-    });
+    console.log({newExpense});
+  
+
+    setExpenseName('')
+    setExpenseDescription('')
+    setExpenseCategory('')
+    setExpenseAmount('')
+    setDateOfExpense('')
   };
+
   return (
     <div>
         <div className='FormHeader'>
@@ -28,9 +39,7 @@ const ExpenseForm = () => {
             <p>Enter Your expense details below</p>
          </div>
         <form id="expenses-form"
-		    onSubmit={handleSubmit}
-        
-        >
+		    onSubmit={handleSubmit} >
 				<input
                  type='text' 
                  placeholder="Enter Expense Name..." 
@@ -50,7 +59,7 @@ const ExpenseForm = () => {
                 <input
                 //  id="task-input" 
                 type='text'
-                value={expenseCategry}
+                value={expenseCategory}
                 onChange={(event)=>setExpenseCategory(event.target.value)}
                  placeholder="Enter Expence Category..." required />
                 <br />
@@ -68,6 +77,7 @@ const ExpenseForm = () => {
                 type="date" 
                  value={dateOfExpense}
                  onChange={(event)=>setDateOfExpense(event.target.value)}
+                 required
                 />
                 <br />
                 <button>Submit Expense</button>
