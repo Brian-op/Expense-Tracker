@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import ExpenseForm from './components/ExpenseForm';
 import ExpensesTable from './components/ExpensesTable';
+import SearchBar from './components/SearchBar';
 
 const App = () => {
   const [expenses, setExpenses] = useState([
@@ -21,16 +22,26 @@ const App = () => {
     }
 
   ]);
+  const [searchCategory,setSearchCategory] = useState('')
 
   const addExpense = (newExpense) => {
     setExpenses((prevExpenses) => [...prevExpenses, newExpense]);
   };
 
+  const filteredExpenses = expenses.filter((expense)=>`${expense.name} ${expense.description} ${expense.category}`
+  .toLowerCase()
+  .includes(searchCategory.toLowerCase))
+
   return (
     <div>
       <Header />
       <ExpenseForm onAddExpense={addExpense} />
-      <ExpensesTable expenses={expenses} />
+     
+      <SearchBar
+      searchCategory={searchCategory}
+      onSearchChange={setSearchCategory}
+      />
+       <ExpensesTable expenses={filteredExpenses} />
 
     </div>
   );

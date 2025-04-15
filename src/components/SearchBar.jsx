@@ -1,8 +1,10 @@
 import React from 'react'
 
-const SearchBar = () => {
+const SearchBar = ({searchCategory, onSearchChange}) => {
   return (
-    <div style={{margin:'20px'}}>
+    <div 
+    className='searchBar'
+    style={{margin:'20px'}}>
         <input 
         type="text"
         placeholder='search expenses...'
