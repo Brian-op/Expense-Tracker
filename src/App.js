@@ -30,7 +30,7 @@ const App = () => {
 
   const filteredExpenses = expenses.filter((expense)=>`${expense.name} ${expense.description} ${expense.category}`
   .toLowerCase()
-  .includes(searchCategory.toLowerCase))
+  .includes(searchCategory.toLowerCase()))
 
   return (
     <div>

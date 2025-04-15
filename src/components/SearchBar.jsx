@@ -12,7 +12,7 @@ const SearchBar = ({searchCategory, onSearchChange}) => {
         onChange={(event)=>onSearchChange(event.target.value)}
         />
     </div>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;
