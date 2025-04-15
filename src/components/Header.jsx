@@ -7,8 +7,7 @@ const Header = () => {
             Expense Tracker
         </h1>
         <p>
-            Lorem ipsum dolor sit amet consectetur 
-            adipisicing elit. Iste, quae!
+        Track your daily spending, manage categories, and stay in control of your budget — all in one place.
         </p>
     </div>
   )

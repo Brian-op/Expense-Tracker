@@ -11,6 +11,7 @@ const ExpenseForm = () => {
   //Submit
   const handleSubmit = (event)=>{
     event.preventDefault()
+    
     alert('Your Expense has been updated')
     console.log({
       expenseName,

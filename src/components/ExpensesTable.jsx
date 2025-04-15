@@ -1,6 +1,8 @@
 import React from 'react'
+import dummyExpenses from './dummyExpenses'
 
 const ExpensesTable = () => {
+
   return (
     <div className='table'>
       <table border="10" cellPadding={10}>
@@ -15,17 +17,17 @@ const ExpensesTable = () => {
         </thead>
 
         <tbody>
-         <tr>
-         <td width="1">Expenses</td>
-
-          <td  width="1">Description</td>
-
-          <td  width="">Category</td>        
-        
-          <td  width="">Amount</td>        
-
-         <td width="">Date</td>
+          {dummyExpenses.map((expense, index)=>(
+            <tr key={index}>
+          {/* destructure */}
+         <td width="1">{expense.name}</td>
+          <td width="1">{expense.description}</td>
+          <td width="1">{expense.category}</td>                
+          <td width="1">{expense.amount}</td>        
+         <td width="1">{expense.date}</td>
          </tr>
+          ))}
+         
         </tbody>
 
       </table>
