@@ -33,12 +33,12 @@ const ExpenseForm = ({onAddExpense}) => {
   };
 
   return (
-    <div>
+    <div className='form'>
         <div className='FormHeader'>
             <h2>ExpenseForm</h2>
             <p>Enter Your expense details below</p>
          </div>
-        <form id="expenses-form"
+        <form className="formExpenses"
 		    onSubmit={handleSubmit} >
 				<input
                  type='text' 
@@ -57,7 +57,7 @@ const ExpenseForm = ({onAddExpense}) => {
                 <br />
 
                 <input
-                //  id="task-input" 
+            
                 type='text'
                 value={expenseCategory}
                 onChange={(event)=>setExpenseCategory(event.target.value)}

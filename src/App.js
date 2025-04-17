@@ -4,6 +4,7 @@ import ExpenseForm from './components/ExpenseForm';
 import ExpensesTable from './components/ExpensesTable';
 import SearchBar from './components/SearchBar';
 
+
 const App = () => {
   const [expenses, setExpenses] = useState([
     {
@@ -35,6 +36,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      
       <ExpenseForm onAddExpense={addExpense} />
      
       <SearchBar
@@ -42,6 +44,8 @@ const App = () => {
       onSearchChange={setSearchCategory}
       />
        <ExpensesTable expenses={filteredExpenses} />
+
+       
 
     </div>
   );

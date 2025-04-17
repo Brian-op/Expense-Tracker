@@ -1,13 +1,75 @@
 body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f6d365, #fda085);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#Container {
+  max-width: 80px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+h1, h2, h3 {
+  color: #333;
+  text-align: center;
+}
+
+form input, form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #e60e0e;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  
+}
+
+form button:hover {
+  background-color: #f32509;
+}
+
+.table {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 70%;
+  border-collapse: collapse;
+  
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e90a0a;
+}
+
+
+.searchBar{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 2px solid #f70202;
+  font-size: 16px;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 6px;
 }
